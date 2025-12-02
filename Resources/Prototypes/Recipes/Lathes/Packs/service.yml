@@ -33,6 +33,7 @@
   - RollingPin
   - BarberScissors
   - CigaretteFilter
+  - PhotoCamera # CorvaxGoob-PhotoCamera
 
 - type: latheRecipePack
   id: ServiceBoardsStatic

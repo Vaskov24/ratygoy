@@ -174,13 +174,16 @@ public sealed partial class FaxPrintout
     public bool Locked { get; private set; }
 
     [DataField]
+    public EntityUid? EntityUid { get; private set; } // CorvaxGoob-PhotoCamera
+
+    [DataField]
     public string? SenderFaxName { get; private set; } = default!;
 
     private FaxPrintout()
     {
     }
 
-    public FaxPrintout(string content, string name, string? label = null, string? prototypeId = null, string? stampState = null, List<StampDisplayInfo>? stampedBy = null, bool locked = false, string? senderFaxName = null)
+    public FaxPrintout(string content, string name, string? label = null, string? prototypeId = null, string? stampState = null, List<StampDisplayInfo>? stampedBy = null, bool locked = false, string? senderFaxName = null, EntityUid? entityUid = null) // CorvaxGoob-PhotoCamera
     {
         Content = content;
         Name = name;
@@ -190,5 +193,6 @@ public sealed partial class FaxPrintout
         StampedBy = stampedBy ?? new List<StampDisplayInfo>();
         Locked = locked;
         SenderFaxName = senderFaxName;
+		EntityUid = entityUid; // CorvaxGoob-PhotoCamera
     }
 }
